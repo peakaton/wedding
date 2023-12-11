@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)https://www.barunsonmcard.com/m/yungyeongrak -->
 <html lang="ko"><script type="text/javascript" id="custom-useragent-string-page-script"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -54,8 +53,12 @@
         
     <div id="6990622" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
         <img class="img" src="resources/4621fb0f-ec35-433a-8d07-171d7f8164e3.png" style="width:800px; height:1423px;" alt="image">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            <audio controls autoplay loop style="width: 100%;">
+                <source src="resources/music.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </div>
-
         
     <div id="6990626" class="item photo ITC03" style="position: absolute; top: 509px; left: 0px; width: 800px; height: 581px;">
         <img class="img" src="resources/b456149a-ec72-48f5-aa45-57bf58a6a942.jpg" style="max-width: 800px; max-height: 581px; width: 100%;" alt="photo">
@@ -516,7 +519,6 @@
     <script type="text/javascript" src="resources/photoswipe.js"></script>
     <script type="text/javascript" src="resources/photoswipe-ui-default.min.js"></script>
     <script type="text/javascript" src="resources/photoswipe-gallery.js"></script>
-    <script type="text/javascript" src="resources/kakao.min.js"></script>
     <script type="text/javascript" src="resources/jquery.mCustomScrollbar.js"></script>
     <script type="text/javascript" src="resources/m2page.js"></script>
         <script type="text/javascript">
@@ -529,62 +531,7 @@
                 var _imgHeight = $('meta[property="og:image:height"]').attr('content');
                 var _eventDateTime = $("#eventDateTime").val();
                 var _addressDetail = $("#addressDetail").text();
-                // 카카오링크 버튼
-                var kakaoDesc = _desc;
-                if (_eventDateTime.length > 0) {
-                    kakaoDesc = _eventDateTime + "\n" + _desc;
-                }
-                Kakao.init('94a08cfa99972d4a71c99401069b1311');
-                //Kakao.isInitialized();
-                if ((_addressDetail != null && _addressDetail.length > 0) &&
-                    (_image != null && _image.length > 0)) {
-                    Kakao.Link.createDefaultButton({
-                        container: '#kakao-link-btn',   // 버튼 id
-                        objectType: 'location',         // 카카오톡 링크 타입
-                        content: {
-                            title: _title,              // 타이틀
-                            description: kakaoDesc,
-                            imageUrl: _image,           // 이미지
-                            link: {
-                                mobileWebUrl: _url,     // 모바일 주소
-                                webUrl: _url            // 웹 주소
-                            },
-                            imageWidth: parseInt(_imgWidth == null ? 0 : _imgWidth),
-                            imageHeight: parseInt(_imgHeight == null ? 0 : _imgWidth)
-                        },
-                        address: _addressDetail
-
-                    });
-                    //공유할 예식장 주소가 없으면
-                } else if ((_addressDetail.length == 0) && (_image != null && _image.length > 0)) {
-                    Kakao.Share.createDefaultButton({
-                        container: '#kakao-link-btn',
-                        objectType: 'feed',
-                        content: {
-                            title: _title,
-                            description: kakaoDesc,
-                            imageUrl: _image,
-                            link: {
-                                mobileWebUrl: _url,
-                                webUrl: _url,
-                            },
-                            imageWidth: parseInt(_imgWidth == null ? 0 : _imgWidth),
-                            imageHeight: parseInt(_imgHeight == null ? 0 : _imgWidth)
-                        },
-                        buttons: [
-                            {
-                                title: '자세히 보기',
-                                link: {
-                                    mobileWebUrl: _url,
-                                    webUrl: _url,
-                                },
-                            }
-                        ],
-                    });
-                }else {
-                    $("#kakao-link-btn").hide();
-                }
-
+  
                 //축의금 내용이 없으면 버튼 숨김
                 const idxs = [];
                 $(".account_pop").each(function (i) {
@@ -604,4 +551,6 @@
 
         </script>
 
-<div id="__endic_crx__"><div class="css-diqpy0"></div></div></body></html>
+<div id="__endic_crx__"><div class="css-diqpy0"></div></div>
+</body>
+</html>
