@@ -50,7 +50,7 @@
     <style>
         #countdown_text {
                 color: #4D1F03;
-                font-size: 30px;
+                font-size: 15px;
                 text-align: left;
                 letter-spacing: 0.25em;
                 line-height: 1.4em;
@@ -67,45 +67,39 @@
     <div id="6990622" class="item ITC02" style="position:absolute; top:0px; left: 0px;">
         <img class="img" src="resources/4621fb0f-ec35-433a-8d07-171d7f8164e3.png" style="width:800px; height:1423px;" alt="image">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-            <audio controls autoplay loop style="width: 100%;">
+            <audio controls autoplay loop style="width: 30%;">
                 <source src="resources/music.mp3" type="audio/mp3">
             </audio>
+            <!-- 카운트다운 -->
+            <div id="countdown_text" class="item ITC01" style="position: absolute; top: 0px; left: 40%; width: 707px; height: 55px; align-items: center;">
+                WEDDING COUNT -
+            </div>
+
+            <div id="countdown_day" class="item ITC01" style="position: absolute; top: 0px; left: 68%; width: 707px; height: 55px; align-items: center;">
+                <div id="countdown_text"></div>
+            </div>
+
+            <div id="countdown_hour" class="item ITC01" style="position: absolute; top: 0px; left: 83%; width: 707px; height: 55px; align-items: center;">
+                <div id="countdown_text"></div>
+            </div>
+
+
+            <div id="countdown_minute" class="item ITC01" style="position: absolute; top: 0px; left: 89%; width: 707px; height: 55px; align-items: center;">
+                <div id="countdown_text"></div>
+            </div>
+
+            <div id="countdown_second" class="item ITC01" style="position: absolute; top: 0px; left: 93%; width: 707px; height: 55px; align-items: center;">
+                <div id="countdown_text"></div>
+            </div>
         </div>
     </div>
         
     <div id="6990626" class="item photo ITC03" style="position: absolute; top: 509px; left: 0px; width: 800px; height: 581px;">
         <img class="img" src="resources/b456149a-ec72-48f5-aa45-57bf58a6a942.jpg" style="max-width: 800px; max-height: 581px; width: 100%;" alt="photo">
     </div>
-
         
     <div id="6990623" class="item ITC02" style="position:absolute; top:226px; left: 395px;">
         <img class="img" src="resources/6505a5dd-e27e-41a9-8559-d10bcd39bce4.png" style="width: 340px; height: 104px;" alt="image">
-    </div>
-
-    <!-- 카운트다운 -->
-    <div id="countdown_day" class="item ITC01" style="position: absolute; top: 124px; left: 80px; width: 707px; height: 82px; align-items: center;">
-        <div class="text" style="font-family: &#39;Nanum Myeongjo&#39;, serif;color: #4D1F03;font-size: 55px;text-align: left;letter-spacing: 0.25em;line-height: 1.4em;">
-            <div id="countdown_text"></div>
-        </div>
-    </div>
-
-    <div id="countdown_hour" class="item ITC01" style="position: absolute; top: 204px; left: 80px; width: 707px; height: 82px; align-items: center;">
-        <div class="text" style="font-family: &#39;Nanum Myeongjo&#39;, serif;color: #4D1F03;font-size: 55px;text-align: left;letter-spacing: 0.25em;line-height: 1.4em;">
-            <div id="countdown_text"></div>
-        </div>
-    </div>
-
-
-    <div id="countdown_minute" class="item ITC01" style="position: absolute; top: 284px; left: 80px; width: 707px; height: 82px; align-items: center;">
-        <div class="text" style="font-family: &#39;Nanum Myeongjo&#39;, serif;color: #4D1F03;font-size: 55px;text-align: left;letter-spacing: 0.25em;line-height: 1.4em;">
-            <div id="countdown_text"></div>
-        </div>
-    </div>
-
-    <div id="countdown_second" class="item ITC01" style="position: absolute; top: 364px; left: 80px; width: 707px; height: 82px; align-items: center;">
-        <div class="text" style="font-family: &#39;Nanum Myeongjo&#39;, serif;color: #4D1F03;font-size: 55px;text-align: left;letter-spacing: 0.25em;line-height: 1.4em;">
-            <div id="countdown_text"></div>
-        </div>
     </div>
 
         
@@ -599,10 +593,10 @@
                     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                    document.getElementById("countdown_day").innerHTML = "<span class='text' id='countdown_text'>" + days + "일</span>";
-                    document.getElementById("countdown_hour").innerHTML = "<span class='text' id='countdown_text'>" + hours + "시간</span>";
-                    document.getElementById("countdown_minute").innerHTML = "<span class='text' id='countdown_text'>" + minutes + "분</span>";
-                     document.getElementById("countdown_second").innerHTML = "<div class='text' id='countdown_text'>" + seconds + "초</div>";
+                    document.getElementById("countdown_day").innerHTML = "<span class='text' id='countdown_text'>" + days + " DAYS </span>";
+                    document.getElementById("countdown_hour").innerHTML = "<span class='text' id='countdown_text'>" + hours + " :</span>";
+                    document.getElementById("countdown_minute").innerHTML = "<span class='text' id='countdown_text'>" + minutes + ":</span>";
+                     document.getElementById("countdown_second").innerHTML = "<div class='text' id='countdown_text'>" + seconds + "</div>";
 
 
                     if (distance < 0) {
