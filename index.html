@@ -50,19 +50,15 @@
     <style>
         #countdown_text {
                 color: #4D1F03;
-                font-size: 15px;
+                font-size: 10px;
                 text-align: left;
                 letter-spacing: 0.25em;
                 line-height: 1.4em;
         }
 
-        #countdown_info_text,
-        #countdown_day,
-        #countdown_hour,
-        #countdown_minute,
-        #countdown_second {
+        #countdown_info_text{
             position: absolute;
-            height: 55px;
+            height: 10px;
             align-items: center;
         }
 
@@ -71,44 +67,12 @@
                 left: 25%;
                 width: 707px;
             }
-
-            #countdown_day {
-                left: 50%;
-            }
-
-            #countdown_hour {
-                left: 62%;
-            }
-
-            #countdown_minute {
-                left: 77%;
-            }
-
-            #countdown_second {
-                left: 92%;
-            }
         }
 
         @media (max-width: 768px) {
             #countdown_text {
                 left: 10%;
                 width: 100%;
-            }
-
-            #countdown_day {
-                left: 10%;
-            }
-
-            #countdown_hour {
-                left: 28%;
-            }
-
-            #countdown_minute {
-                left: 48%;
-            }
-
-            #countdown_second {
-                left: 72%;
             }
         }
     </style>
@@ -128,24 +92,7 @@
             </audio>
             <!-- 카운트다운 -->
             <div id="countdown_info_text" class="item ITC01" style="position: absolute; top: 0px; left: 50%; width: 707px; height: 55px; align-items: center;">
-                <div id="countdown_text">WEDDING COUNT -</div>
-            </div>
-
-            <div id="countdown_day" class="item ITC01" style="position: absolute; top: 0px; left: 70%; width: 707px; height: 55px; align-items: center;">
-                <div id="countdown_text"></div>
-            </div>
-
-            <div id="countdown_hour" class="item ITC01" style="position: absolute; top: 0px; left: 83%; width: 707px; height: 55px; align-items: center;">
-                <div id="countdown_text"></div>
-            </div>
-
-
-            <div id="countdown_minute" class="item ITC01" style="position: absolute; top: 0px; left: 89%; width: 707px; height: 55px; align-items: center;">
-                <div id="countdown_text"></div>
-            </div>
-
-            <div id="countdown_second" class="item ITC01" style="position: absolute; top: 0px; left: 95%; width: 707px; height: 55px; align-items: center;">
-                <div id="countdown_text"></div>
+                <div id="countdown_text">WEDDING COUNT-</div>
             </div>
         </div>
     </div>
@@ -649,10 +596,8 @@
                     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                    document.getElementById("countdown_day").innerHTML = "<span class='text' id='countdown_text'>" + days + " DAYS </span>";
-                    document.getElementById("countdown_hour").innerHTML = "<span class='text' id='countdown_text'>" + hours + " :</span>";
-                    document.getElementById("countdown_minute").innerHTML = "<span class='text' id='countdown_text'>" + minutes + ":</span>";
-                     document.getElementById("countdown_second").innerHTML = "<div class='text' id='countdown_text'>" + seconds + "</div>";
+                     var countdownText = "WEDDING COUNT - " + days + " DAYS " + hours + " : " + minutes + " : " + seconds;
+                     document.getElementById("countdown_info_text").innerHTML = "<div class='text' id='countdown_text'>" + countdownText + "</div>";
 
 
                     if (distance < 0) {
