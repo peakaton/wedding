@@ -54,6 +54,8 @@
                 text-align: left;
                 letter-spacing: 0.25em;
                 line-height: 1.4em;
+                white-space: nowrap;
+                overflow: hidden;
         }
 
         #countdown_info_text{
@@ -92,7 +94,7 @@
             </audio>
             <!-- 카운트다운 -->
             <div id="countdown_info_text" class="item ITC01" style="position: absolute; top: 0px; left: 50%; width: 707px; height: 55px; align-items: center;">
-                <div id="countdown_text">WEDDING COUNT-</div>
+                <div id="countdown_text"></div>
             </div>
         </div>
     </div>
@@ -597,7 +599,12 @@
                     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                      var countdownText = "WEDDING COUNT - " + days + " DAYS " + hours + " : " + minutes + " : " + seconds;
-                     document.getElementById("countdown_info_text").innerHTML = "<div class='text' id='countdown_text'>" + countdownText + "</div>";
+
+                     var countdownTextElement = document.getElementById("countdown_text");
+
+                     countdownTextElement.innerHTML = countdownText;
+                     // document.getElementById("countdown_info_text").innerHTML = "<div class='text' id='countdown_text'>" + countdownText + "</div>";
+                     countdownTextElement.style.width = (countdownText.length * 8) + "px";
 
 
                     if (distance < 0) {
